@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>  BRORESEP GOLD  - 100 Resep Viral</title>
+<style>
+@keyframes pulse-gold {
+  0% { box-shadow:0 0 0 0 rgba(255,215,0,0.7); transform:scale(1); }
+  70% { box-shadow:0 0 15px 8px rgba(255,215,0,0); transform:scale(1.05); }
+  100% { box-shadow:0 0 0 0 rgba(255,215,0,0); transform:scale(1); }
+}
+.btn{animation:pulse-gold 2s infinite}
+#bundle-btn{animation:pulse-gold 1.5s infinite}
+</style>
+<style>
+body{background:#0a0a0a;color:#fff;font-family:sans-serif;margin:0;padding:15px;padding-bottom:90px}
+h1{text-align:center;color:#FFD700}
+#search{width:100%;padding:12px;border-radius:10px;border:1px solid #FFD700;background:#111;color:#fff;margin-bottom:15px}
+.card{background:#111;border:1px solid #333;border-left:3px solid #FFD700;padding:12px;margin-bottom:10px;border-radius:10px;display:flex;justify-content:space-between;align-items:center}
+.card span{font-size:14px}
+.btn{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;font-weight:bold;padding:8px 18px;border-radius:8px;border:none;cursor:pointer}
+</style>
+</head>
+<body>
+<h1> BRORESEP GOLD </h1>
+<p style="text-align:center;color:#aaa;font-size:12px">100 Resep Viral 30 Detik + Ide Jualan 1000an</p>
+<input id="search" placeholder="Cari resep... ayam, mie, dessert..." onkeyup="filter()">
+
+<div id="list"></div>
+
+<script>
+const resep = [
+"Ayam Crispy Saus Telur Asin Viral","Ayam Woku Kemangi 5 Menit","Chicken Katsu Curry Jepang","Ayam Popcorn Garlic","Sate Taichan Goreng Teflon","Ayam Mentai Rice Bowl","Ayam Geprek Mozzarella Lumer","Beef Slice Teriyaki","Daging Sapi Lada Hitam Saori","Ayam Suwir Kemangi Pedas","Nugget Ayam Keju Homemade","Ayam Bakar Madu Teflon","Steak Tempe Viral","Rolade Ayam Sayur","Ayam Goreng Bawang Putih","Beef Enoki Roll","Ayam Rica Kemangi","Sosis Asam Manis","Ayam Crispy Salted Egg","Dimsum Ayam Udang","Bakso Ayam Mercon","Ayam Teriyaki Hokben KW","Chicken Wings Madu Pedas","Sate Lilit Ayam Bali","Ayam Fillet Lemon","Mie Gacoan Level 3 KW","Nasi Goreng Gila Mentai","Seblak Rafael Coklat","Mie Nyemek Indomie Hack","Nasi Telur Pontianak Viral","Macaroni Scotel Kukus","Martabak Mie Telur","Nasi Goreng Kencur","Mie Carbonara Indomie","Bubur Ayam Magic Com","Lontong Sayur Padang","Nasi Bakar Ayam Suwir","Mie Goreng Tek Tek","Toast Mentai Viral","Sandwich Telur Mayo","Roti John Sosis Keju","Nasi Daun Jeruk Ayam","Mie Kuah Susu Pedas","Omelet Mie Keju","Nasi Goreng Kimchi","Mie Ayam Gerobak KW","Cireng Nasi Keju","Pangsit Mie Goreng Le Gourmet","Nasi Hainan Ayam","Indomie Donat Viral","Brownies Kukus Lumer 2 Telur","Dessert Box Oreo","Mochi Bites Daifuku","Puding Roti Tawar Lumer","Churros Coklat 3 Bahan","Cromboloni Viral","Banoffee Pie Cup","Cheesecake Lumer Teflon","Pisang Coklat Keju Lumer","Martabak Mini Teflon","Klepon Ubi Lumer","Donat Paha Ayam","Roti Sisir Mentega","Kue Leker Teflon","Brownies Sekat Viral","Es Kul Buah Naga","Setup Roti Tawar Keju","Bola Ubi Kopong","Corndog Mozzarella","Cimol Bojot Pedas","Tahu Walik Aci","Pisang Nugget Crispy","Lumpia Pisang Coklat","Sempol Ayam Crispy","Es Krim Goreng Roti","Es Teh Jumbo Solo KW","Es Lumut Cincau Viral","Es Kuwut Melon Bali","Kopi Susu Gula Aren 1 Liter","Es Matcha Strawberry Latte","Es Coklat Beng Beng","Es Teh Poci Melati","Es Jagung Hawai","Es Teler Sultan Cup","Thai Tea Cream Cheese","Es Kulkul Strawberry","Es Kopi Jelly Cincau","Es Buah Naga Susu","Es Permen Karet Viral","Es Pisang Ijo Makassar","Es Susu Kurma Jelly","Puding Lumut Mentega","Ide Jualan Cilok Kuah Pedas","Ide Jualan Risol Mayo Margo","Ide Jualan Makaroni Bantet","Ide Jualan Sosis Solo","Ide Jualan Tahu Bakso Frozen","Ide Jualan Dimsum 1000an","Ide Jualan Seblak Coet Instan","Ide Jualan Kue Balok Lumer"
+];
+
+const list = document.getElementById('list');
+function render(data){
+  list.innerHTML='';
+  data.forEach(j=>{
+    list.innerHTML+=`<div class="card"><span>${j}</span><button class="btn" onclick="nonton('${j}')">NONTON</button></div>`;
+  });
+}
+function nonton(j){
+  window.open(`https://www.youtube.com/results?search_query=${encodeURIComponent(j + ' resep viral 30 detik')}`,'_blank');
+}
+function filter(){
+  const q = document.getElementById('search').value.toLowerCase();
+  render(resep.filter(r=>r.toLowerCase().includes(q)));
+}
+render(resep);
+</script>
+
+<!-- === BANNER BAWAH BISA DI CLOSE === -->
+<div id="ad-banner-bottom" style="position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#111;padding:8px 10px;text-align:center;border-top:2px solid #FFD700;">
+  
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div style="font-size:9px;color:#888;">IKLAN • SCORPION SCAN SUPPORT</div>
+    <span onclick="document.getElementById('ad-banner-bottom').style.display='none'" style="background:#333;color:#fff;padding:2px 8px;border-radius:10px;font-size:12px;cursor:pointer;"> CLOSE</span>
+  </div>
+
+  <!-- TEMPAT IKLAN BAUVAL -->
+  <div id="bauval-slot" style="margin-top:6px;">
+    <script data-cfasync="false" src="https://bauval.org/14/1c35c6a9..."></script>
+  </div>
+
+  <!-- PROMO LU SENDIRI -->
+  <a href="https://lynk.id/xtradevr/l2vvxm69po0n/apps/6a7ae264-ded6-4c04-b..." style="text-decoration:none;display:block;margin-top:6px;">
+    <div style="background:linear-gradient(90deg,#FFD700,#FFA500);color:#000;font-weight:bold;padding:6px;border-radius:6px;font-size:13px;">
+       BY 1GET2 PROMO UNTUK MINGGU INI 
+    </div>
+  </a>
+
+</div>
+
+</body>
+</html>
